@@ -5,27 +5,39 @@
     <title>Minha Página com Imagem e Estilo</title>
     
     <style>
-        /* Estilo do corpo da página (Desafio 2) */
+        /* Estilo do corpo da página */
         body {
-            background-color: #1a1a2e; /* Fundo escuro */
-            color: #e2e8f0;            /* Texto claro e confortável */
+            background-color: #1a1a2e; 
+            color: #e2e8f0;            
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 600px;          /* Limita a largura para melhor leitura */
-            margin: 40px auto;         /* Centraliza a página */
+            max-width: 600px;          
+            margin: 40px auto;         
             padding: 20px;
             line-height: 1.6;
         }
 
+        /* Estilo da identificação de contexto (Alteração do Desafio Atual) */
+        .sub-header {
+            display: block;
+            text-align: center;
+            color: #00adb5;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            margin-bottom: -5px;
+        }
+
         /* Estilo dos títulos */
         h1 {
-            color: #00adb5;            /* Azul ciano */
+            color: #00adb5;            
             text-align: center;
             border-bottom: 2px solid #00adb5;
             padding-bottom: 10px;
+            margin-top: 5px;
         }
 
         h2 {
-            color: #ff2e63;            /* Rosa/coral */
+            color: #ff2e63;            
             margin-top: 30px;
         }
 
@@ -34,18 +46,20 @@
             text-align: justify;
         }
 
-        /* --- ESTILO DA IMAGEM (Desafio 3) --- */
+        /* Estilo da imagem */
         img {
-            display: block;            /* Faz a imagem se comportar como um bloco */
-            max-width: 100%;           /* Garante que ela nunca morda ou passe do limite da tela */
-            height: auto;              /* Mantém a proporção correta de altura e largura */
-            border-radius: 8px;        /* Deixa as pontas da imagem arredondadas e modernas */
-            margin: 20px auto;         /* Cria espaço nas linhas e centraliza a imagem */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra suave */
+            display: block;            
+            max-width: 100%;           
+            height: auto;              
+            border-radius: 8px;        
+            margin: 20px auto;         
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
         }
     </style>
 </head>
 <body>
+
+    <span class="sub-header">Blog de Tecnologia • Por: Seu Nome</span>
 
     <h1>Minha Nova Identidade</h1>
     
