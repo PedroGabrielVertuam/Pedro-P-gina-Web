@@ -2,67 +2,124 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Minha Página com Imagem e Estilo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Blog de Tecnologia</title>
     
     <style>
-        /* Estilo do corpo da página (Desafio 2) */
+        /* --- ESTILIZAÇÃO (CSS) --- */
+        
         body {
-            background-color: #1a1a2e; /* Fundo escuro */
-            color: #e2e8f0;            /* Texto claro e confortável */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            max-width: 600px;          /* Limita a largura para melhor leitura */
-            margin: 40px auto;         /* Centraliza a página */
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
             padding: 20px;
-            line-height: 1.6;
+            color: #333;
         }
 
-        /* Estilo dos títulos */
-        h1 {
-            color: #00adb5;            /* Azul ciano */
+        header {
             text-align: center;
-            border-bottom: 2px solid #00adb5;
-            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        .blog-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* DESAFIOS DE CSS (FLEXBOX) */
+
+        /* 1. Altera a propriedade flex-direction para exibir em linha (row) */
+        .post-card {
+            display: flex;
+            flex-direction: row; /* Elementos (imagem e texto) um ao lado do outro */
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            overflow: hidden;
+            
+            /* 2. Ajuste para que cada card ocupe 100% da largura da página/container */
+            flex: 1 1 100%; 
+        }
+
+        /* Ajustes da Imagem dentro do card */
+        .post-image {
+            width: 300px;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* Área de texto do card */
+        .post-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: 1;
         }
 
         h2 {
-            color: #ff2e63;            /* Rosa/coral */
-            margin-top: 30px;
+            margin-top: 0;
+            color: #111;
         }
 
-        /* Estilo dos parágrafos */
-        p {
-            text-align: justify;
+        h2 small {
+            font-size: 0.6em;
+            color: #666;
+            font-weight: normal;
         }
 
-        /* --- ESTILO DA IMAGEM (Desafio 3) --- */
-        img {
-            display: block;            /* Faz a imagem se comportar como um bloco */
-            max-width: 100%;           /* Garante que ela nunca morda ou passe do limite da tela */
-            height: auto;              /* Mantém a proporção correta de altura e largura */
-            border-radius: 8px;        /* Deixa as pontas da imagem arredondadas e modernas */
-            margin: 20px auto;         /* Cria espaço nas linhas e centraliza a imagem */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adiciona uma sombra suave */
+        /* Classe obrigatória do desafio */
+        .artigo-fonte {
+            font-size: 0.85em;
+            color: #888;
+            font-style: italic;
+        }
+
+        /* 3. Utilizando align-self para quebrar o alinhamento padrão */
+        .read-more-btn {
+            background-color: #007acc;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            
+            /* Faz o botão se alinhar sozinho ao final (direita) do bloco */
+            align-self: flex-end; 
+        }
+
+        .read-more-btn:hover {
+            background-color: #005999;
         }
     </style>
 </head>
 <body>
 
-    <h1>Minha Nova Identidade</h1>
-    
-    <p>Esta página não segue mais o padrão sem graça de fundo branco e texto preto! Agora ela usa CSS dentro da tag style para ganhar cores personalizadas e uma tipografia muito mais moderna.</p>
+    <header>
+        <h1>TechBlog</h1>
+        <p>Acompanhe as últimas novidades do mundo tech</p>
+    </header>
 
-    <h2>Explorando Estilos</h2>
-    <p>O segredo aqui é testar combinações. Um fundo escuro precisa de letras bem claras para manter a leitura confortável. Se o fundo for claro, use letras bem escuras.</p>
+    <main class="blog-container">
+        <article class="post-card">
+            
+            <img src="https://picsum.photos/300/200" alt="Imagem ilustrativa de tecnologia" class="post-image">
+            
+            <div class="post-content">
+                <h2>Inteligência Artificial em 2026<br>
+                <small>Como os novos modelos assistentes mudaram nossa rotina</small></h2>
+                
+                <p>Os novos modelos de <strong>redes neurais autoregressivas</strong> alcançaram um nível de autonomia surpreendente, transformando a programação de software e a criação de conteúdo em tarefas muito mais colaborativas.</p>
+                
+                <p class="artigo-fonte">Fonte: TechChronicles TechNews</p>
+                
+                <button class="read-more-btn">Ler mais</button>
+            </div>
 
-    <h2>Ilustrando o Conteúdo</h2>
-    <p>Abaixo, adicionei uma imagem que se conecta com o tema tecnológico e moderno do nosso layout. Veja como ela se ajusta perfeitamente ao tamanho do texto:</p>
-
-    <img 
-        src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600" 
-        alt="Notebook aberto em uma mesa escura exibindo linhas de código em uma tela iluminada, representando o desenvolvimento da página"
-    >
-
-    <p>Repare que a imagem possui um atributo chamado <code>alt</code>. Ele serve para descrever o que está na imagem caso ela não carregue ou para que leitores de tela leiam para pessoas com deficiência visual, garantindo a acessibilidade.</p>
+        </article>
+    </main>
 
 </body>
 </html>
